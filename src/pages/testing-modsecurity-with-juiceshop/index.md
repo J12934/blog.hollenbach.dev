@@ -8,11 +8,11 @@ spoiler: Setting up ModSecurity to make JuiceShop "even more" secure!
 
 > This post isn't an evaluation or a proper test, it’s just an experiment to see how this could work.
 
-ModSecurity is an open source web application firewall which filters out malicious requests before they can hit the actual application server. The OWASP Mod Security Core Rule Set (CRS) defines a bunch of predefined rules to be used in ModSecurity. CRS itself provides a bunch of config options, which can be used to tweak its behaviour. The most basic option being the paranoia level. By increasing the level of paranoia, more and more aggressive rules are activated, which increases the amount of rules applied to figure out whether a request is an attack or not. Unfortunately more rules also means more room for mistakes which will lead to valid requests being wrongly detected as an attack. These cases are generally called false positive results.
+[ModSecurity](https://www.modsecurity.org/) is an open source web application firewall which filters out malicious requests before they can hit the actual application server. The [OWASP Mod Security Core Rule Set (CRS)](https://coreruleset.org/) defines a bunch of predefined rules to be used in ModSecurity. CRS itself provides a bunch of config options, which can be used to tweak its behaviour. The most basic option being the [paranoia level](https://coreruleset.org/faq/#paranoialevel). By increasing the level of paranoia, more and more aggressive rules are activated, which increases the amount of rules applied to figure out whether a request is an attack or not. Unfortunately more rules also means more room for mistakes which will lead to valid requests being wrongly detected as an attack. These cases are generally called [false positive results](https://www.mathsisfun.com/data/probability-false-negatives-positives.html).
 
 In this post I will only use paranoia level 1, which is meant to block a wide set of attacks without interfering with normal requests. I will explore how turn up the level of paranoia in later blog post.
 
-ModSecurity can be integrated in Application in a few ways, I’ll be using the reverse proxy mode in this example, which is really easy to set up using the provided ModSecurity docker image
+ModSecurity can be integrated in Application in a few ways, I’ll be using the reverse proxy mode in this example, which is really easy to set up using the provided [ModSecurity docker image](https://store.docker.com/community/images/owasp/modsecurity-crs)
 
 ## Setup
 
