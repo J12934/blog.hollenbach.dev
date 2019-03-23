@@ -14,7 +14,7 @@ export default class HTML extends React.Component {
           />
           {this.props.headComponents}
         </head>
-        <body {...this.props.bodyAttributes} className="light">
+        <body {...this.props.bodyAttributes} className="dark">
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -27,9 +27,12 @@ export default class HTML extends React.Component {
                   window.__onThemeChange(newTheme);
                 }
 
-                var preferredTheme;
+                var preferredTheme = 'dark';
                 try {
-                  preferredTheme = localStorage.getItem('theme');
+                  var storedTheme = localStorage.getItem('theme');
+                  if(storedTheme){
+                    preferredTheme = storedTheme;
+                  }
                 } catch (err) { }
 
                 window.__setPreferredTheme = function(newTheme) {
