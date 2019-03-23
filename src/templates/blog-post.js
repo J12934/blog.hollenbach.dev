@@ -15,7 +15,7 @@ import {
   loadFontsForCode,
 } from '../utils/i18n';
 
-const GITHUB_USERNAME = 'gaearon';
+const GITHUB_USERNAME = 'j12934';
 const GITHUB_REPO_NAME = 'blog.hollenbach.dev';
 const systemFont = `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
@@ -39,7 +39,7 @@ class BlogPostTemplate extends React.Component {
 
     loadFontsForCode(lang);
 
-    const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/pages/slug/index.md`;
+    const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/pages${slug}index.md`;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
