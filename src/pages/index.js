@@ -4,6 +4,7 @@ import get from 'lodash/get';
 import Helmet from 'react-helmet';
 
 import Bio from '../components/Bio';
+import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import { formatReadingTime } from '../utils/helpers';
 import { rhythm } from '../utils/typography';
@@ -48,6 +49,7 @@ class BlogIndex extends React.Component {
             </div>
           );
         })}
+        <Footer />
       </Layout>
     );
   }
