@@ -4,7 +4,7 @@ date: '2018-12-10'
 spoiler: Setting up ModSecurity to make JuiceShop "even more" secure!
 ---
 
-![ModSecurity CRS + OWASP JuiceShop”](./mod-security-juice-shop.svg)
+![ModSecurity CRS + OWASP JuiceShop”](./mod-security-juice-shop.png)
 
 > This post isn't an evaluation or a proper test, it’s just an experiment to see how this could work.
 

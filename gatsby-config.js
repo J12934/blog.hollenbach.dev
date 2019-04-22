@@ -18,41 +18,43 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-sharp`,
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: `gatsby-transformer-remark`,
             options: {
-              maxWidth: 590,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          'gatsby-remark-autolink-headers',
-          {
-            resolve: 'gatsby-remark-prismjs',
-            options: {
-              inlineCodeMarker: '÷',
-            },
-          },
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-          {
-            resolve: 'gatsby-remark-external-links',
-            options: {
-              target: '_blank',
+              plugins: [
+                {
+                  resolve: `gatsby-remark-images`,
+                  options: {
+                    maxWidth: 672,
+                    withWebp: true,
+                    wrapperStyle: `margin-left: -1.3125rem; margin-right: -1.3125rem;`,
+                    backgroundColor: 'rgb(40, 44, 52)',
+                  },
+                },
+                'gatsby-remark-autolink-headers',
+                {
+                  resolve: 'gatsby-remark-prismjs',
+                  options: {
+                    inlineCodeMarker: '÷',
+                  },
+                },
+                'gatsby-remark-copy-linked-files',
+                'gatsby-remark-smartypants',
+                {
+                  resolve: 'gatsby-remark-external-links',
+                  options: {
+                    target: '_blank',
+                  },
+                },
+              ],
             },
           },
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {
